@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Money Wise</string>
+    <string name="overview_title">This month you have spent</string>
+    <string name="add_expense_title">Add your new expense details</string>
+    <string name="add_expense_name_label">Name</string>
+    <string name="add_expense_name_hint">Enter a name for your expense</string>
+    <string name="add_expense_category_label">Category</string>
+    <string name="add_expense_month_label">Month</string>
+    <string name="add_expense_amount_label">Amount</string>
+    <string name="add_expense_amount_hint">Enter the amount</string>
+    <string name="done">Done</string>
+    <string name="enter_month_hint">Enter the month</string>
+    <string name="categoriesHeader">Categories</string>
+    <string-array name="month_names">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+</resources>

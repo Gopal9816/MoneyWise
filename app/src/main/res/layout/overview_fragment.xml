@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.moneywise.overview.OverviewViewModel" />
+    </data>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginHorizontal="@dimen/spacing_normal"
+                android:text="@string/overview_title"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                />
+
+            <TextView
+                android:id="@+id/bannerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginBottom="@dimen/spacing_small"
+                android:text="@{String.valueOf(viewModel.totalMonthlyExpense.intValue())}"
+                android:textAppearance="?attr/textAppearanceHeadline2"
+                android:textAlignment="center"
+                tools:text="999"/>
+
+            <TextView
+                android:id="@+id/categoryHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/categoriesHeader"
+                android:textAppearance="?textAppearanceHeadline6"
+                android:layout_marginHorizontal="@dimen/spacing_normal"
+                android:layout_marginVertical="@dimen/spacing_small"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categoryList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/spacing_normal"
+                android:paddingVertical="@dimen/spacing_small"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        </LinearLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/spacing_normal"
+            android:src="@drawable/ic_add_black_24dp"
+            android:onClick="@{() -> viewModel.onNavigateToAddExpense()}"
+            style="@style/Widget.App.FloatingActionButton"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
